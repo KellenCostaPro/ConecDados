@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="src/assets/img/icons/logo__home.png" type="image/x-icon">
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="src/css/reset.css">
+    <title>ConecDados-VTT</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <img src="src/assets/img/icons/logo__header.png" alt="Logo do site">
+        </div>
+        <nav class="header__menu menu">
+            <ul class="menu__list">
+                <li class="menu__item"> <a class="menu__link" href="index.html">Sobre Nós</a></li>
+                <li class="menu__item"> <a class="menu__link" href="#"> Dúvidas</a> </li>
+                <li class="menu__item"> <a class="menu__link" href="#">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="header__hamburger hamburger">
+            <div class="hamburger__line"></div>
+            <div class="hamburger__line"></div>
+            <div class="hamburger__line"></div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="container__conteudo">
+            
+            <img class="container__img" src="src/assets/img/icons/logo__home.png" alt="">
+            <h1 class="container__title">Bem-vindo ao ConecDados!</h1>
+            <p class="container__descricao">Prepare-se para uma jornada única, onde sua imaginação é o único limite.<br>
+                Encontre camaradas de equipe, forje alianças e desvende mistérios.</p>
+
+            <div class="buttons">
+                <button class="login"><a href="login.html" class="link_button">Login</a></button>
+                <button class="cadastro"><a href="Cadastro.html" class="link_button">Cadastra-se</a></button>
+
+            </div>
+        </div>    
+        </main>
+        <footer>
+            <p>&copy; 2024 Conecdados. Todos os direitos reservados.</p>
+        </footer>
+        <script>
+            const menuHamburger = document.querySelector('.hamburger');
+            const menuList = document.querySelector('.menu__list');
+            
+            menuHamburger.addEventListener('click', () => {
+                menuList.classList.toggle('menu__list--show');
+                menuHamburger.classList.toggle('hamburger--active');
+            });
+        </script>
+        
+
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="src/assets/img/icons/logo__home.png" type="image/x-icon">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <link rel="stylesheet" href="src/css/fontes.css">
+    <link rel="stylesheet" href="src/css/cadastro.css">
+    <link rel="stylesheet" href="src/css/reset.css">
+    <title>ConecDados</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <img src="src/assets/img/icons/logo__header.png" alt="Logo do site">
+        </div>
+        <nav class="header__menu menu">
+            <ul class="menu__list">
+                <li class="menu__item"> <a class="menu__link" href="index.html">Sobre Nós</a></li>
+                <li class="menu__item"> <a class="menu__link" href="#"> Dúvidas</a> </li>
+                <li class="menu__item"> <a class="menu__link" href="#">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="header__hamburger hamburger">
+            <div class="hamburger__line"></div>
+            <div class="hamburger__line"></div>
+            <div class="hamburger__line"></div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="cadastro">
+            <div class="cadastro_image" id="img">
+                <!-- aqui vai a imagem na css -->
+            </div>
+            <div class="cadastro__forms">
+                <h1 class="cadastro__title">Novo Usuário</h1>
+                <p class="cadastro__welcome">Preencha o formulário abaixo para criar a sua conta grátis.</p>
+                <form class="form" id="form">
+                    <div class="form-content ">
+                        <label class="hidden" for="nome">Nome:</label>
+                        <input type="text" name="nome" id="name" placeholder="Digite seu nome">
+                        <i class="form__input-icon fas fa-user"></i>
+                        <span class="error-message">Aqui vai a mensagem de erro....</span>
+                    </div>
+                    <div class="form-content">
+                        <label class="hidden" for="email">Email:</label>
+                        <input type="email" name="email" id="email" placeholder="Digite seu Email">
+                        <i class="form__input-icon fas fa-envelope"></i>
+                        <span class="error-message">Aqui vai a mensagem de erro....</span>
+                    </div>
+                    <div class="form-content">
+                        <label class="hidden" for="password">Senha:</label>
+                        <input type="password" name="password" id="password" placeholder="Digite sua senha">
+                        <i class="form__input-icon fas fa-lock"></i>
+                        <div class="requirements__progress-bar twenty-percent"></div>
+                        <span class="error-message">Aqui vai a mensagem de erro....</span>
+                    </div>
+                    <div class="requirements">
+
+                        <div class="requirements__description">A senha deverá ter:</div>
+                        <ul class="requirements__list ">
+                            <li class="requirements__item ">
+                                <i class="fas"></i>
+                                Pelo menos 1 letra maiúscula e 1 letra minúscula
+                            </li>
+                            <li class="requirements__item">
+                                <i class="fas"></i>
+                                Pelo menos 1 número
+                            </li>
+                            <li class="requirements__item">
+                                <i class="fas"></i>
+                                Pelo menos 1 caracter especial
+                            </li>
+                            <li class="requirements__item">
+                                <i class="fas"></i>
+                                Pelo menos 8 caracteres
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="form-content">
+                        <label class="hidden" for="confirmpassword">Confirmação de senha:</label>
+                        <input type="password" name="password" id="confirmpassword" placeholder="Confirme sua senha">
+                        <i class="form__input-icon fas fa-lock"></i>
+                        <span class="error-message">Aqui vai a mensagem de erro....</span>
+                    </div>
+                    <div class="privacy-container">
+                        <input type="checkbox" id="privacy-checkbox">
+                        <label for="privacy-checkbox" class="privacy-label">Eu aceito os <a href="#">termos de privacidade</a></label>
+                    </div>
+                    <button class="form__button" type="submit">Cadastrar</button>
+                    <h3>ou</h3>
+                    <a href="login.html" class="form__button--login">Entrar</a>
+                </form>
+            </div>
+
+
+<!-- pop up -->
+<div class="popup" id="popup">
+    <div class="popup-content" id="popupContent">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <p id="popupMessage"></p>
+        <button id="loginButton" onclick="redirectToLogin()">Login</button>
+        <button id="recoverButton" onclick="redirectToRecoverPassword()">Recuperar Senha</button>
+        <button id="reloadButton" onclick="reloadPage()">Tentar Novamente</button>
+    </div>
+</div>
+
+</div>
+
+    </main>
+
+    <script src="src/js/cadastro.js"></script>
+    <script>
+        const menuHamburger = document.querySelector('.hamburger');
+        const menuList = document.querySelector('.menu__list');
+
+        menuHamburger.addEventListener('click', () => {
+            menuList.classList.toggle('menu__list--show');
+            menuHamburger.classList.toggle('hamburger--active');
+        });
+        document.getElementById("loginBtn").onclick = function() {
+    window.location.href = "login.html";
+    }
+    </script>
+</body>
+
+</html>

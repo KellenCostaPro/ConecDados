@@ -1,0 +1,543 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+body, html {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../assets/img/fundo_home.png);
+    background-size: cover;
+    background-position: center;
+    opacity: 85%;
+    z-index: -1;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+
+    padding: 15px;
+}
+
+.header__logo img {
+    width: 15rem;
+}
+
+.header__logo {
+    display: flex;
+    width: 40px;
+    height: auto;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.menu__item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.menu__link {
+    text-decoration: none;
+    color: black;
+}
+
+.menu__link:hover {
+    color: rgb(19, 58, 30);
+}
+
+.header__hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger__line {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 5px 0;
+}
+
+.main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.cadastro {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    background-color: #f3efef;
+    width: 350px;
+    height: 620px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transition: width 0.3s, height 0.3s;
+    transition-timing-function: ease;
+}
+
+.cadastro_image {
+    background: #fff url(../assets/img/login-mobile.png) no-repeat;
+    background-size: cover;
+    height: 70px;
+}
+
+.cadastro__forms {
+    padding: 5px;
+}
+
+.cadastro__title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.cadastro__welcome {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: .4rem;
+}
+
+h3 {
+    text-align: center;
+    color: #C1C6D0;
+    font-size: .9rem;
+    padding: 10px;
+}
+
+.form {
+    padding: 10px;
+}
+
+.form-content {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.form-content input {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    outline: none;
+    padding: 10px;
+    padding-left: 3.5rem;
+    border: 2px solid #dfdfdf;
+    position: relative;
+}
+
+.form-content input::placeholder {
+    color: #C1C6D0;
+}
+
+.hidden {
+    left: 0;
+    position: absolute;
+    top: .5rem;
+}
+
+.form__input-icon {
+    color: #8A93A5;
+    cursor: pointer;
+    font-size: 1rem;
+    left: 1.5rem;
+    position: absolute;
+    top: .6rem;
+}
+
+.form-content .error-message {
+    font-size: 0.7rem;
+    color: #ff3b25;
+    display: none;
+}
+
+
+
+.form__input-icon--erro {
+    color: #8A93A5;
+    cursor: pointer;
+    font-size: 1rem;
+    left: 18rem;
+    position: absolute;
+    top: .6rem;
+}
+
+
+.requirements__progress-bar {
+    border-radius: 0.5rem;
+    height: 0.5rem;
+    transition: width 0.3s;
+    width: 0;
+}
+
+.requirements__progress-bar.twenty-percent {
+    background-color: #ff0000;
+}
+
+.requirements__progress-bar.fifty-percent {
+    background-color: #ffa500;
+}
+
+.requirements__progress-bar.seventy-five-percent {
+    background-color: #ffff00;
+}
+
+.requirements__progress-bar.full-percent {
+    background-color: #008000;
+}
+
+.requirements__description,
+.requirements__item {
+    color: #aca29e;
+    font-size: .8rem;
+    margin-bottom: .4rem;
+}
+
+
+.requirements__item.checked {
+    color: #81BC3A;
+    font-weight: bold;
+}
+
+.requirements__item .fas::before {
+    content: "\f057";
+
+}
+
+.requirements__item.checked .fas::before {
+    content: "\f058";
+}
+
+
+.privacy-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: .5rem;
+
+}
+
+#privacy-checkbox {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    accent-color: #4CAF50;
+}
+
+.privacy-label {
+    font-size: .9rem;
+    color: #333;
+    cursor: pointer;
+}
+
+
+.form__button {
+    width: 100%;
+    align-items: center;
+    appearance: none;
+    background-image: linear-gradient(135deg, #4a8457, #3a6a45, #305d3a, #2d4c31, #1f3921);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(38, 84, 53, 0.5) 0 2px 4px, rgba(38, 84, 53, 0.3) 0 7px 13px -3px, rgba(10, 9, 8, 0.5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 45px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+}
+
+.form__button:focus {
+    box-shadow: #8a93a5 0 0 0 1.5px inset, rgba(138, 147, 165, 0.5) 0 2px 4px, rgba(138, 147, 165, 0.3) 0 7px 13px -3px, #8a93a5 0 -3px 0 inset;
+}
+
+.form__button:hover {
+    box-shadow: rgba(138, 147, 165, 0.5) 0 4px 8px, rgba(138, 147, 165, 0.3) 0 7px 13px -3px, #8a93a5 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.form__button:active {
+    box-shadow: #8a93a5 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+
+
+.form__button--login {
+    width: 100%;
+    align-items: center;
+    appearance: none;
+    background-image: linear-gradient(135deg, #8a93a5, #7f889c, #747c93, #6a7089, #5f657f);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(138, 147, 165, 0.5) 0 2px 4px, rgba(138, 147, 165, 0.3) 0 7px 13px -3px, rgba(138, 147, 165, 0.5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 45px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+}
+
+.form__button--login:focus {
+    box-shadow: #8a93a5 0 0 0 1.5px inset, rgba(138, 147, 165, 0.5) 0 2px 4px, rgba(138, 147, 165, 0.3) 0 7px 13px -3px, #8a93a5 0 -3px 0 inset;
+}
+
+.form__button--login:hover {
+    box-shadow: rgba(138, 147, 165, 0.5) 0 4px 8px, rgba(138, 147, 165, 0.3) 0 7px 13px -3px, #8a93a5 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.form__button--login:active {
+    box-shadow: #8a93a5 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+/* Estilo para telas menores */
+@media only screen and (max-width: 768px) {
+    .header__hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu__list {
+        display: none;
+    }
+
+    .menu__list.menu__list--show {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 75%;
+        width: 25%;
+        background-color: rgba(80, 79, 74, 0.7);
+        z-index: 1;
+    }
+
+    .menu__item {
+        text-align: center;
+    }
+
+    .menu__link {
+        color: #fff;
+    }
+
+    /* Estilos para a animação do ícone de hambúrguer */
+    .hamburger__line {
+        width: 30px;
+        height: 3px;
+        background-color: #000;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger--active .hamburger__line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger--active .hamburger__line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger--active .hamburger__line:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .cadastro {
+        width: 70%;
+    }
+
+    .cadastro_image {
+        float: left;
+        width: 30%;
+        height: 100%;
+    }
+
+    .cadastro__forms {
+        padding-top: 1.5rem;
+        float: right;
+        width: 70%;
+    }
+
+    .form__button {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .form__button--login {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .cadastro {
+        width: 75%;
+
+    }
+
+    .cadastro_image {
+        float: right;
+        width: 50%;
+        height: 100%;
+    }
+
+    .cadastro__forms {
+        padding-top: 2.5rem;
+        float: left;
+        width: 50%;
+    }
+
+    .form__button {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .form__button--login {
+        margin-top: 10px;
+    }
+}
+
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid #3c4e3c;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+#popupMessage{
+    color: #008000;
+}
+.close {
+    position: absolute;
+    color: #ff0000;
+    top: 5px;
+    left: 8.5rem;
+    padding: 20px 5px 20px 20px;
+    cursor: pointer;
+}
+
+#loginButton, #recoverButton, #reloadButton {
+    display: none;
+    margin: 10px 5px;
+    cursor: pointer;
+}
+
+#loginButton {
+    background-color: #38793e;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px 20px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+}
+
+#loginButton:hover {
+    background: rgb(102, 156, 112);
+    background: linear-gradient(102deg, rgba(102, 156, 112, 1) 0%, rgba(56, 121, 62, 1) 36%, rgba(3, 75, 6, 1) 78%);
+}
+
+#recoverButton {
+    background: rgb(0, 102, 204);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    color: #fff;
+    padding: 0 10px;
+}
+
+#recoverButton:hover {
+    background: rgb(128, 176, 209);
+    background: linear-gradient(90deg, rgba(128, 176, 209, 1) 0%, rgba(44, 96, 175, 1) 50%, rgba(8, 45, 116, 1) 100%);
+}
+
+#reloadButton {
+    background: rgb(226, 196, 196);
+    border-radius: 5px;
+    color: #070707;
+    padding: 5px 20px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+#reloadButton:hover {
+    background: rgb(242, 242, 242);
+    background: linear-gradient(90deg, rgba(242, 242, 242, 1) 0%, rgba(213, 165, 178, 1) 50%, rgba(115, 87, 87, 1) 100%);
+}

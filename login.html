@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="src/assets/img/icons/logo__home.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="src/css/login.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <img src="src/assets/img/icons/logo__header.png" alt="Logo do site">
+        </div>
+        <nav class="header__menu menu">
+            <ul class="menu__list">
+                <li class="menu__item"> <a class="menu__link" href="index.html">Sobre Nós</a></li>
+                <li class="menu__item"> <a class="menu__link" href="#"> Dúvidas</a> </li>
+                <li class="menu__item"> <a class="menu__link" href="#">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="header__hamburger hamburger">
+            <div class="hamburger__line"></div>
+            <div class="hamburger__line"></div>
+            <div class="hamburger__line"></div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="login">
+            <div class="login__image" id="img">
+                <!-- aqui vai a imagem na css -->
+            </div>
+            <div class="login__forms">
+                <h1 class="login__title">Iniciar sessão </h1>
+                <p class="login__welcome">Bem vindo(a) novamente!!</p>
+                <form method="post" class="login__form form" id="form">
+                    <div class="form__content">
+                        <label class="form__label form__label--hidden" for="email">Email:</label>
+                        <input class="form__input" type="email" name="email" id="email" placeholder="Digite seu Email">
+                        <i class="form__input-icon fas fa-envelope"></i>
+                        <span class="form__error-message">Aqui vai a mensagem de erro....</span>
+                    </div>
+                    <div class="form__content">
+                        <label class="form__label form__label--hidden" for="password">Senha:</label>
+                        <input class="form__input" type="password" name="password" id="password" placeholder="Digite sua senha">
+                        <i class="form__input-icon fas fa-lock"></i>
+                        <span class="form__error-message">Aqui vai a mensagem de erro....</span>
+                        <a class="form__forgot-password" href="#">Esqueceu a senha?</a>
+                    </div>
+                    <button class="form__button" type="submit">Entrar</button>
+                    <h3>ou</h3> 
+                    <a href="Cadastro.html" class="form__button--cadastro">Cadastre-se</a>
+                </form> 
+                
+            </div>
+        </section>
+    </main>
+    <script src="src/js/login.js"></script>
+<script>
+    const hamburgerMenu = document.querySelector('.hamburger');
+    const menuList = document.querySelector('.menu__list');
+    
+    hamburgerMenu.addEventListener('click', () => {
+        menuList.classList.toggle('menu__list--show');
+        hamburgerMenu.classList.toggle('hamburger--active');
+    });
+</script>
+
+    
+</body>
+
+</html>
