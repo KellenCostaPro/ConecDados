@@ -1,93 +1,61 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+
     const form = document.getElementById("form");
-    const emailInput = document.getElementById("email");
-    const passwordInput = document.getElementById("password");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
 
-    form.addEventListener("submit", function(event) {
+
+
+    form.addEventListener("submit", handleFormSubmit);
+
+    function handleFormSubmit(event) {
         event.preventDefault();
-
         resetErrorStyles();
 
-        // Validar se o email está preenchido
-        if (emailInput.value.trim() === "") {
-            showError(emailInput, "Por favor, insira seu email.");
-            return;
-        }
+        if (!validateInputs()) return;
 
-        // Validar o email apenas se estiver preenchido
-        if (!validateEmail(emailInput.value.trim())) {
-            showError(emailInput, "Por favor, insira um email válido.");
-            return;
-        }
-
-        // Validar se a senha está preenchida
-        if (passwordInput.value.trim() === "") {
-            showError(passwordInput, "Por favor, insira sua senha.");
-            return;
-        }
-
-        // Preparar os dados do formulário para enviar à API
         const formData = {
-            email: emailInput.value.trim(),
-            password: passwordInput.value.trim()
+            email: email.value.trim(),
+            password: password.value.trim()
         };
 
-        // Enviar os dados para a API
+        showLoadingAnimation();
         authenticateUser(formData);
-    });
+    }
 
-    function authenticateUser(data) {
+    function authenticateUser(formData) {
         fetch('http://192.168.100.105:3000/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(formData)
         })
-        .then(response => {
-            if (response.ok) {
-                // Se a resposta da API for bem-sucedida, redirecionar para a página principal
-                window.location.href = 'index.html';
-            } else {
-                // Se a resposta da API indicar um erro de autenticação, mostrar mensagem de erro
-                showError(passwordInput, "Email ou senha incorretos.");
-            }
-        })
-        .catch(error => {
-            console.error('Erro ao autenticar usuário:', error);
-            // Se houver um erro ao enviar a solicitação para a API, mostrar mensagem de erro
-            showError(passwordInput, "Ocorreu um erro ao tentar fazer login. Por favor, tente novamente mais tarde.");
-        });
+            .then(response => response.json().then(formData => ({ status: response.status, body: formData })))
+            .then(handleAuthenticationResponse)
+            .catch(() => {
+                hideLoadingAnimation();
+                displayPopup("Erro ao fazer login. Tente novamente.", ['reload']);
+            });
     }
 
-    function showError(input, message) {
-        const parentElement = input.parentElement;
-        const errorMessage = parentElement.querySelector(".form__error-message");
-        errorMessage.textContent = message;
-        parentElement.classList.add("error");
-        errorMessage.style.display = "block"; 
+    function handleAuthenticationResponse(response) {
+        hideLoadingAnimation();
+        console.log(response)
+        if (response.status === 201) {
+            const token = response.body.token;
+            const user = response.body.user.id;
+            /* console.log("Token:", token); // Verificar o token extraído
+            console.log("User ID:", user); // Verificar o ID extraído */
+            localStorage.setItem('jwtToken', token);
+            localStorage.setItem('teste', user);
+            window.location = "home.html";
+        } else if (response.status === 427) {
+            displayPopup("Email não cadastrado.", ['cadastro', 'reload']);
+        } else if (response.status === 428) {
+            displayPopup("Email ou senha incorreto.", ['recover', 'reload']);
+        } else {
+            displayPopup("Erro ao fazer login. Tente novamente.", ['reload']);
+        }
     }
-    
-
-    function resetErrorStyles() {
-        const errorInputs = document.querySelectorAll(".form__content.error");
-        errorInputs.forEach(function(input) {
-            input.classList.remove("error");
-            const errorMessage = input.querySelector(".form__error-message");
-            errorMessage.textContent = '';
-        });
-    }
-
-    function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-    }
-});
-
-const hamburgerMenu = document.querySelector('.hamburger');
-const menuList = document.querySelector('.menu__list');
-
-hamburgerMenu.addEventListener('click', () => {
-    menuList.classList.toggle('menu__list--show');
-    hamburgerMenu.classList.toggle('hamburger--active');
 });

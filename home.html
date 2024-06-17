@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>HOME</h1>
+    <button onclick="authenticateUser()">iniciar sessão</button>
+</body>
+<script>
+
+    function authenticateUser() {
+        const a = `http://192.168.100.105:3000/user/${localStorage.getItem('teste')}`;
+        console.log(a)
+        fetch(a, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`
+            },
+            body: JSON.stringify()
+        })
+            .then((response ) => {
+                if (!response.ok) {
+            throw new Error('Erro ao obter o id do usuário');
+        }
+                console.log('autenticado')
+               /*  window.location.href = 'grad.html'; */
+            })
+
+            .catch(error => {
+                console.log("erro:",error)
+                /* window.location.href = 'login.html'; */
+            })
+    }
+</script>
+
+</html>

@@ -29,62 +29,6 @@ body::before {
     z-index: -1;
 }
 
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-
-    padding: 15px;
-}
-
-.header__logo img {
-    width: 15rem;
-}
-
-.header__logo {
-    display: flex;
-    width: 40px;
-    height: auto;
-}
-
-.menu {
-    display: flex;
-    align-items: center;
-}
-
-.menu__list {
-    display: flex;
-    align-items: center;
-    list-style: none;
-}
-
-.menu__item {
-    padding: 10px;
-    cursor: pointer;
-}
-
-.menu__link {
-    text-decoration: none;
-    color: black;
-}
-
-.menu__link:hover {
-    color: rgb(19, 58, 30);
-}
-
-.header__hamburger {
-    display: none;
-    cursor: pointer;
-}
-
-.hamburger__line {
-    width: 25px;
-    height: 3px;
-    background-color: #000;
-    margin: 5px 0;
-}
-
 .main {
     position: relative;
     width: 100%;
@@ -93,18 +37,21 @@ body::before {
 
 .cadastro {
     position: absolute;
-    top: 46%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
-    background-color: #f3efef;
+    background-color: #eee7e7;
     width: 350px;
-    height: 620px;
+    height: 98%;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     transition: width 0.3s, height 0.3s;
     transition-timing-function: ease;
 }
+
 
 .cadastro_image {
     background: #fff url(../assets/img/login-mobile.png) no-repeat;
@@ -353,57 +300,6 @@ h3 {
     transform: translateY(2px);
 }
 
-/* Estilo para telas menores */
-@media only screen and (max-width: 768px) {
-    .header__hamburger {
-        display: block;
-        cursor: pointer;
-    }
-
-    .menu__list {
-        display: none;
-    }
-
-    .menu__list.menu__list--show {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 75%;
-        width: 25%;
-        background-color: rgba(80, 79, 74, 0.7);
-        z-index: 1;
-    }
-
-    .menu__item {
-        text-align: center;
-    }
-
-    .menu__link {
-        color: #fff;
-    }
-
-    /* Estilos para a animação do ícone de hambúrguer */
-    .hamburger__line {
-        width: 30px;
-        height: 3px;
-        background-color: #000;
-        margin: 5px auto;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .hamburger--active .hamburger__line:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger--active .hamburger__line:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger--active .hamburger__line:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
-}
 
 
 @media screen and (min-width: 768px) and (max-width: 992px) {

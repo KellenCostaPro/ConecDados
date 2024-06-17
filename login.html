@@ -7,13 +7,14 @@
     <link rel="icon" href="src/assets/img/icons/logo__home.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="src/css/login.css">
+    <link rel="stylesheet" href="src/css/loading.css">
     <title>Login</title>
 </head>
 
 <body>
     <header class="header">
         <div class="header__logo">
-            <img src="src/assets/img/icons/logo__header.png" alt="Logo do site">
+            <a href="index.html"> <img src="src/assets/img/icons/logo__header.png" alt="Logo do site"></a>
         </div>
         <nav class="header__menu menu">
             <ul class="menu__list">
@@ -45,20 +46,33 @@
                     </div>
                     <div class="form__content">
                         <label class="form__label form__label--hidden" for="password">Senha:</label>
-                        <input class="form__input" type="password" name="password" id="password" placeholder="Digite sua senha">
+                        <input class="form__input" type="password" name="password" id="password" placeholder="Digite sua senha"maxlength="20">
                         <i class="form__input-icon fas fa-lock"></i>
                         <span class="form__error-message">Aqui vai a mensagem de erro....</span>
                         <a class="form__forgot-password" href="#">Esqueceu a senha?</a>
                     </div>
                     <button class="form__button" type="submit">Entrar</button>
                     <h3>ou</h3> 
-                    <a href="Cadastro.html" class="form__button--cadastro">Cadastre-se</a>
+                    
                 </form> 
-                
+                <button class="form__button--cadastro" onclick="redirectToRegister()">Cadastre-se</button>
             </div>
         </section>
+        <!-- pop up -->
+<div class="popup" id="popup">
+    <div class="popup-content" id="popupContent">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <p id="popupMessage"></p>
+        <button id="RegistreButton" onclick="redirectToRegister()">Cadastre-se</button>
+        <button id="recoverButton" onclick="redirectToRecoverPassword()">Recuperar Senha</button>
+        <button id="reloadButton" onclick="reloadPage()">Tentar Novamente</button>
+    </div>
+</div>
     </main>
     <script src="src/js/login.js"></script>
+    <script src="src/js/validacoes-login.js"></script>
+    <script src="src/js/loading.js"></script>
+    <script src="src/js/pop-up.js"></script>
 <script>
     const hamburgerMenu = document.querySelector('.hamburger');
     const menuList = document.querySelector('.menu__list');

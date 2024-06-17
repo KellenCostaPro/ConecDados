@@ -10,27 +10,12 @@
     <link rel="stylesheet" href="src/css/fontes.css">
     <link rel="stylesheet" href="src/css/cadastro.css">
     <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="src/css/loading.css">
     <title>ConecDados</title>
 </head>
 
 <body>
-    <header class="header">
-        <div class="header__logo">
-            <img src="src/assets/img/icons/logo__header.png" alt="Logo do site">
-        </div>
-        <nav class="header__menu menu">
-            <ul class="menu__list">
-                <li class="menu__item"> <a class="menu__link" href="index.html">Sobre Nós</a></li>
-                <li class="menu__item"> <a class="menu__link" href="#"> Dúvidas</a> </li>
-                <li class="menu__item"> <a class="menu__link" href="#">Contato</a></li>
-            </ul>
-        </nav>
-        <div class="header__hamburger hamburger">
-            <div class="hamburger__line"></div>
-            <div class="hamburger__line"></div>
-            <div class="hamburger__line"></div>
-        </div>
-    </header>
+
 
     <main class="main">
         <section class="cadastro">
@@ -55,7 +40,7 @@
                     </div>
                     <div class="form-content">
                         <label class="hidden" for="password">Senha:</label>
-                        <input type="password" name="password" id="password" placeholder="Digite sua senha">
+                        <input type="password" name="password" id="password" placeholder="Digite sua senha" maxlength="20">
                         <i class="form__input-icon fas fa-lock"></i>
                         <div class="requirements__progress-bar twenty-percent"></div>
                         <span class="error-message">Aqui vai a mensagem de erro....</span>
@@ -85,7 +70,7 @@
 
                     <div class="form-content">
                         <label class="hidden" for="confirmpassword">Confirmação de senha:</label>
-                        <input type="password" name="password" id="confirmpassword" placeholder="Confirme sua senha">
+                        <input type="password" name="password" id="confirmpassword" placeholder="Confirme sua senha" maxlength="20">
                         <i class="form__input-icon fas fa-lock"></i>
                         <span class="error-message">Aqui vai a mensagem de erro....</span>
                     </div>
@@ -95,9 +80,9 @@
                     </div>
                     <button class="form__button" type="submit">Cadastrar</button>
                     <h3>ou</h3>
-                    <a href="login.html" class="form__button--login">Entrar</a>
+                    <a href="login.html" class="form__button--login">Entrar</a> 
                 </form>
-            </div>
+        </div>
 
 
 <!-- pop up -->
@@ -116,6 +101,9 @@
     </main>
 
     <script src="src/js/cadastro.js"></script>
+    <script src="src/js/validacoes-cadastro.js"></script>
+    <script src="src/js/loading.js"></script>
+    <script src="src/js/pop-up.js"></script>
     <script>
         const menuHamburger = document.querySelector('.hamburger');
         const menuList = document.querySelector('.menu__list');

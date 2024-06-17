@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTT RPG</title>
+    <link rel="stylesheet" href="src/css/grad.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="toolbar">
+        <input type="file" id="mapFile" accept=".jpg, .png" class="btn-upload">
+    </div>
+    <div class="canvas">
+        <div id="imageArea"></div>
+    </div>
+    <div class="sidebar">
+        <h2>Gerenciamento de Personagens</h2>
+        <form id="characterForm">
+            <label for="charName">Nome:</label><br>
+            <input type="text" id="charName" name="charName" class="input-field"><br>
+            <label for="charClass">Classe:</label><br>
+            <input type="text" id="charClass" name="charClass" class="input-field"><br>
+            <label for="charToken">Imagem do Token:</label><br>
+            <input type="file" id="charToken" accept=".jpg, .png" class="btn-upload"><br>
+            <button type="submit" class="btn-primary">Salvar</button>
+        </form>
+        <ul id="characterList"></ul>
+        <h2>Rolagem de Dados</h2>
+        <div id="diceRoller">
+            <input type="number" id="diceQuantity" min="1" value="1" class="input-number">d
+            <input type="number" id="diceSides" min="4" value="6" class="input-number">
+            <button id="rollDiceBtn" class="btn-primary">Rolar Dados</button>
+            <p id="diceResult"></p>
+        </div>
+    </div>
+    <script src="src/js/grad.js"></script>
+</body>
+</html>
