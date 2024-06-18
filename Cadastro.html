@@ -27,8 +27,8 @@
                 <p class="cadastro__welcome">Preencha o formulário abaixo para criar a sua conta grátis.</p>
                 <form class="form" id="form">
                     <div class="form-content ">
-                        <label class="hidden" for="nome">Nome:</label>
-                        <input type="text" name="nome" id="name" placeholder="Digite seu nome">
+                        <label class="hidden" for="name">Nome:</label>
+                        <input type="text" name="name" id="name" placeholder="Digite seu nome">
                         <i class="form__input-icon fas fa-user"></i>
                         <span class="error-message">Aqui vai a mensagem de erro....</span>
                     </div>
@@ -99,12 +99,10 @@
 </div>
 
     </main>
-
-    <script src="src/js/cadastro.js"></script>
+    <script src="src/js/globalScript.js"></script>
     <script src="src/js/validacoes-cadastro.js"></script>
-    <script src="src/js/loading.js"></script>
-    <script src="src/js/pop-up.js"></script>
-    <script>
+    <script src="src/js/cadastro.js"></script>
+    <!-- <script>
         const menuHamburger = document.querySelector('.hamburger');
         const menuList = document.querySelector('.menu__list');
 
@@ -115,7 +113,7 @@
         document.getElementById("loginBtn").onclick = function() {
     window.location.href = "login.html";
     }
-    </script>
+    </script> -->
 </body>
 
 </html>

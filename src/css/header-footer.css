@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
+
+
+body, html {
+    font-family: "MedievalSharp", cursive;
+    font-weight: 400;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../assets/img/fundo_home.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    margin: 0;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    padding: 15px;
+    width: 100%;
+}
+
+.header__logo img {
+    width: 15rem;
+}
+
+.header__menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.menu__item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.menu__link {
+    text-decoration: none;
+    color: black;
+}
+
+.menu__link:hover {
+    color: rgb(19, 58, 30);
+}
+
+.header__hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger__line {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 5px 0;
+}
+
+
+.container {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    flex-direction: column;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.sidebar__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar__card {
+    width: 100%;
+}
+
+.sidebar__first-info {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar__image {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.sidebar__profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar__profile-name {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.sidebar__profile-status {
+    font-size: 1em;
+    color: #777;
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    padding: 20px;
+}
+
+.main-content__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-content__title {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Animações e estilos adicionais */
+@keyframes animatop {
+    0% {
+        opacity: 0;
+        bottom: -500px;
+    }
+    100% {
+        opacity: 1;
+        bottom: 0px;
+    }
+}
+
+@keyframes animainfos {
+    0% {
+        bottom: 10px;
+    }
+    100% {
+        bottom: -42px;
+    }
+}
+
+@keyframes rotatemagic {
+    0% {
+        opacity: 0;
+        transform: rotate(0deg);
+        top: -24px;
+        left: -253px;
+    }
+    100% {
+        transform: rotate(-30deg);
+        top: -24px;
+        left: -78px;
+    }
+}
+
+/* Estilos responsivos */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .sidebar {
+        width: 300px;
+        margin-bottom: 0;
+    }
+
+    .main-content {
+        flex: 1;
+    }
+}

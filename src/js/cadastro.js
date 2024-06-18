@@ -1,7 +1,5 @@
 //add tamanho de pasta 
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("form");
     const name = document.getElementById("name");
@@ -10,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const confirmpassword = document.getElementById("confirmpassword");
     const privacyCheckbox = document.getElementById('privacy-checkbox');
     /* const storage = document.getElementById ("storage") */
-    const apiUrl = `${host}/auth/register`;
+    const apiUrl = "http://192.168.100.105:3000"
 
 
     name.addEventListener("blur", checkInputname);
@@ -63,3 +61,4 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
